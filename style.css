@@ -1,0 +1,535 @@
+/* Mengatur margin dan padding untuk semua elemen menjadi 0 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Menambahkan box-sizing untuk kontrol lebih baik terhadap padding dan border */
+}
+
+/* Mengatur gaya dasar untuk elemen body */
+body {
+    background-color: #f0f0f0; /* Warna latar belakang yang lebih lembut */
+    font-family: 'Arial', sans-serif; /* Jenis font yang lebih modern */
+    line-height: 1.6; /* Meningkatkan keterbacaan dengan line-height */
+    color: #333; /* Warna teks utama */
+}
+
+/* Mengatur gaya kontainer utama */
+.main-container {
+    background-color: #ffffff; /* Warna latar belakang putih */
+    width: 105%; /* Lebar kontainer */
+    max-width: 1200px; /* Lebar maksimum kontainer */
+    margin: 20px auto; /* Tengah kan container secara horizontal */
+    padding: auto; /* Jarak dalam kontainer */
+    border-radius: 8px; /* Sudut membulat */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Bayangan halus */
+}
+
+/* Mengatur gaya header gambar */
+.img-header {
+    display: flex; /* Mengatur layout dengan flexbox */
+    flex-wrap: wrap; /* Membungkus elemen jika diperlukan */
+    position: relative; /* Posisi relatif untuk penempatan elemen */
+    margin-bottom: 20px; /* Jarak bawah */
+}
+
+.img-header img {
+    width: 20%; /* Lebar gambar 20% dari kontainer */
+    border-radius: 8px; /* Sudut membulat untuk gambar */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Bayangan yang lebih tegas */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transisi halus pada transformasi dan bayangan */
+}
+
+/* Mengatur gaya menu header */
+.menu-header {
+    display: flex; /* Mengatur layout dengan flexbox */
+    justify-content: space-between; /* Menyebar item menu secara merata */
+    margin-bottom: 20px; /* Jarak bawah */
+    flex-wrap: wrap; /* Membungkus elemen jika diperlukan */
+    position: relative; /* Posisi relatif untuk elemen pseudo */
+}
+
+/* Menambahkan garis batas di atas menu header */
+.menu-header::before {
+    content: "";
+    position: absolute;
+    top: 85%; /* Posisi di atas menu header */
+    left: 0;
+    width: 100%;
+    height: 2px; /* Tebal garis */
+    background-color: #ddd; /* Warna garis */
+    z-index: 1; /* Mengatur z-index agar garis muncul di atas elemen lain */
+}
+
+.menu-header a {
+    display: inline-block;
+    margin-bottom: 20px;
+    height: 65px; /* Tinggi tombol */
+    padding: 0 85px; /* Jarak horizontal dalam tombol */
+    font-size: 23px; /* Ukuran font */
+    border: 8px solid #fff; /* Garis batas putih */
+    cursor: pointer; /* Tangan saat hover */
+    background: #4b00ff; /* Warna latar belakang utama */
+    color: #fff; /* Warna teks putih */
+    border-radius: 40px; /* Sudut membulat */
+    position: relative; /* Posisi relatif untuk elemen pseudo */
+    overflow: hidden; /* Menyembunyikan elemen yang melampaui batas */
+    text-align: center; /* Menyelaraskan teks di tengah */
+    line-height: 50px; /* Menyelaraskan teks vertikal */
+    transition: background 0.3s, color 0.3s; /* Transisi halus untuk warna */
+}
+
+/* Elemen pseudo sebelum tombol */
+.menu-header a:before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: -200px;
+    top: 0;
+    background: linear-gradient(45deg, #f90, transparent); /* Gradien oranye */
+    transition: left 0.5s ease-in-out;
+}
+
+/* Elemen pseudo setelah tombol */
+.menu-header a:after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    right: -200px;
+    top: 0;
+    background: linear-gradient(45deg, transparent, #f90); /* Gradien oranye */
+    transition: right 0.5s ease-in-out;
+}
+
+/* Gaya saat hover pada tombol */
+.menu-header a:hover:before {
+    left: 0; /* Memindahkan gradien dari kiri */
+}
+
+.menu-header a:hover:after {
+    right: 0; /* Memindahkan gradien dari kanan */
+}
+
+/* Mengatur gaya kontainer paket */
+.paket-container {
+    width: 300px; /* Lebar kontainer */
+    margin: 15px; /* Jarak luar */
+    padding: 15px; /* Jarak dalam kontainer */
+    background-color: #ffffff; /* Warna latar belakang putih */
+    border: 1px solid #ddd; /* Garis batas abu-abu muda */
+    border-radius: 8px; /* Sudut membulat */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Bayangan halus */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transisi halus */
+}
+
+/* Efek hover pada kontainer paket */
+.paket-container:hover {
+    transform: translateY(-5px); /* Mengangkat kontainer sedikit ke atas */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Bayangan lebih tegas saat di-hover */
+    border-color: #ccc; /* Perubahan warna garis batas saat di-hover */
+}
+
+
+.paket-container h4 {
+    color: #666; /* Warna teks abu-abu */
+    margin-bottom: 10px; /* Jarak bawah */
+}
+
+.paket-container img {
+    width: 100%; /* Lebar gambar 100% dari kontainer */
+    border-radius: 4px; /* Sudut membulat untuk gambar */
+}
+
+.paket-container p {
+    text-align: justify; /* Menyelaraskan teks secara rata kiri dan kanan */
+}
+
+/* Mengatur gaya kontainer informasi */
+.info-container {
+    display: flex; /* Mengatur layout dengan flexbox */
+    justify-content: center; /* Menyelaraskan item di tengah */
+    flex-wrap: wrap; /* Membungkus elemen jika diperlukan */
+    margin-bottom: 20px; /* Jarak bawah */
+}
+
+/* Mengatur gaya kontainer pencarian */
+.search-container {
+    margin-bottom: 20px; /* Jarak bawah */
+}
+
+.search-container input[type="text"] {
+    padding: 8px; /* Jarak dalam input */
+    margin-right: 10px; /* Jarak kanan */
+    border: 1px solid #ccc; /* Garis batas abu-abu muda */
+    border-radius: 4px; /* Sudut membulat */
+}
+
+.search-container input[type="submit"] {
+    padding: 8px; /* Jarak dalam tombol */
+    border: none; /* Menghapus garis batas */
+    border-radius: 4px; /* Sudut membulat */
+    background-color: #3498db; /* Warna latar belakang biru */
+    color: #ffffff; /* Warna teks putih */
+    cursor: pointer; /* Tangan saat hover */
+    transition: background-color 0.3s; /* Transisi halus */
+}
+
+/* Mengubah gaya tombol saat hover */
+.search-container input[type="submit"]:hover {
+    background-color: #2980b9; /* Warna latar belakang saat hover */
+}
+
+/* Mengatur gaya kontainer video */
+.video-container {
+    width: 400px; /* Lebar kontainer */
+    height: 251px; /* Tinggi kontainer */
+    margin: 15px; /* Jarak luar */
+    padding: 15px; /* Jarak dalam kontainer */
+    background-color: #ffffff; /* Warna latar belakang putih */
+    border: 1px solid #ddd; /* Garis batas abu-abu muda */
+    border-radius: 8px; /* Sudut membulat */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Bayangan halus */
+    display: flex; /* Mengatur layout dengan flexbox */
+    flex-direction: column; /* Mengatur arah elemen secara kolom */
+    justify-content: center; /* Menyelaraskan item di tengah */
+}
+
+.video-container h3 {
+    color: #333; /* Warna teks */
+    margin-bottom: 10px; /* Jarak bawah */
+    font-size: 22px; /* Ukuran font */
+}
+
+.video-container iframe {
+    width: 100%; /* Lebar iframe 100% dari kontainer */
+    height: 90%; /* Tinggi otomatis */
+    border-radius: 4px; /* Sudut membulat */
+}
+
+/* Mengatur gaya kontainer brand */
+.brand-container {
+    width: 60%; /* Lebar kontainer */
+    position: absolute; /* Posisi absolut */
+    top: 10%; /* Jarak dari atas */
+    left: 5%; /* Jarak dari kiri */
+    text-align: left; /* Menyelaraskan teks di kiri */
+}
+
+.brand-container img {
+    width: 55%; /* Lebar gambar 55% dari kontainer */
+    border-radius: 6px; /* Sudut membulat */
+}
+
+.brand-container h1 {
+    color: #ffffff; /* Warna teks putih */
+    font-size: 3vw; /* Ukuran font relatif terhadap lebar viewport */
+    text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5); /* Bayangan teks yang lebih tebal */
+    font-family: 'Arial', sans-serif; /* Jenis font yang lebih modern */
+    font-weight: bold; /* Ketebalan font */
+}
+
+/* Mengatur gaya h2 dalam brand-container */
+.brand-container h2 {
+    color: #ffffff; /* Warna teks putih */
+    font-size: 1.5vw; /* Ukuran font relatif terhadap lebar viewport */
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5); /* Bayangan teks */
+}
+
+/* Mengatur gaya konten pariwisata */
+.konten-pariwisata {
+    display: flex; /* Mengatur layout dengan flexbox */
+    flex-wrap: wrap; /* Membungkus elemen jika diperlukan */
+    margin-bottom: 20px; /* Jarak bawah */
+}
+
+/* Mengatur gaya kontainer informasi */
+.info-container {
+    flex: 2; /* Lebar kontainer relatif terhadap kontainer lain */
+    display: flex; /* Mengatur layout dengan flexbox */
+    justify-content: center; /* Menyelaraskan item di tengah */
+    flex-wrap: wrap; /* Membungkus elemen jika diperlukan */
+    align-self: flex-start; /* Menyelaraskan kontainer di awal */
+}
+
+/* Mengatur gaya kontainer paket */
+.paket-container {
+    width: 300px; /* Lebar kontainer */
+    margin: 15px; /* Jarak luar */
+    padding: 15px; /* Jarak dalam kontainer */
+    background-color: #ffffff; /* Warna latar belakang putih */
+    border: 1px solid #e74c3c; /* Garis batas merah */
+    border-radius: 8px; /* Sudut membulat */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Bayangan halus */
+}
+
+.paket-container a {
+    display: block; /* Menampilkan link sebagai blok */
+    width: 100%; /* Lebar link 100% dari kontainer */
+    text-align: center; /* Menyelaraskan teks di tengah */
+    text-decoration: none; /* Menghapus garis bawah */
+    background-color: #3498db; /* Warna latar belakang biru */
+    color: #ffffff; /* Warna teks putih */
+    padding: 10px; /* Jarak dalam link */
+    margin-top: 10px; /* Jarak atas */
+    border-radius: 4px; /* Sudut membulat */
+    transition: background-color 0.3s; /* Transisi halus */
+}
+
+/* Mengubah gaya link saat hover */
+.paket-container a:hover {
+    background-color: #2980b9; /* Warna latar belakang saat hover */
+}
+
+/* Mengatur gaya judul dalam kontainer paket */
+.paket-container h3 {
+    color: #666; /* Warna teks */
+    margin-bottom: 10px; /* Jarak bawah */
+}
+
+.paket-container img {
+    width: 100%; /* Lebar gambar 100% dari kontainer */
+    border-radius: 4px; /* Sudut membulat */
+}
+
+/* Mengatur gaya kontainer promosi */
+.promosi-container {
+    flex: 1; /* Lebar kontainer relatif terhadap kontainer lain */
+    display: flex; /* Mengatur layout dengan flexbox */
+    flex-direction: column; /* Mengatur arah elemen secara kolom */
+    align-items: center; /* Menyelaraskan item di tengah */
+    margin-bottom: 20px; /* Jarak bawah */
+}
+
+/* Mengatur gaya footer */
+.footer {
+    width: 100%; /* Lebar kontainer */
+    max-width: 1200px; /* Lebar maksimum kontainer */
+    margin: 20px auto; /* Tengah kan footer secara horizontal */
+    padding: 20px; /* Jarak dalam kontainer */
+    background-color: #2c3e50; /* Warna latar belakang gelap */
+    color: #ffffff; /* Warna teks putih */
+    border-radius: 8px; /* Sudut membulat */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Bayangan halus */
+    box-sizing: border-box; /* Termasuk padding dan border dalam lebar total */
+    border-top: 1px solid #ddd; /* Opsional: border atas untuk batas */
+}
+
+.footer h3 {
+    text-align: center; /* Menyelaraskan teks di tengah */
+    font-weight: normal; /* Ketebalan font normal */
+    margin-bottom: 10px; /* Jarak bawah */
+    font-size: larger;
+}
+
+/* Mengatur gaya kontainer formulir */
+.form-container {
+    padding: 20px; /* Jarak dalam kontainer */
+    background-color: #ffffff; /* Warna latar belakang putih */
+    border: 1px solid #ddd; /* Garis batas abu-abu muda */
+    border-radius: 8px; /* Sudut membulat */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Bayangan halus */
+    margin-bottom: 20px; /* Jarak bawah */
+}
+
+/* Mengatur gaya judul dalam kontainer formulir */
+.form-container h2 {
+    margin-bottom: 15px; /* Jarak bawah */
+    color: #333; /* Warna teks */
+}
+
+/* Mengatur gaya label dalam formulir */
+label {
+    display: block; /* Menampilkan label sebagai blok */
+    margin-bottom: 8px; /* Jarak bawah */
+    color: #333; /* Warna teks */
+}
+
+/* Mengatur gaya elemen input dan select */
+input[type="text"],
+input[type="date"],
+input[type="number"],
+select {
+    width: 100%; /* Lebar elemen 100% dari kontainer */
+    padding: 10px; /* Jarak dalam elemen */
+    margin-bottom: 15px; /* Jarak bawah */
+    border: 1px solid #ccc; /* Garis batas abu-abu muda */
+    border-radius: 4px; /* Sudut membulat */
+    font-size: 16px; /* Ukuran font */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); /* Bayangan halus */
+}
+
+/* Memperbesar ukuran input untuk nomor telepon */
+input[type="tel"] {
+    font-size: 18px; /* Ukuran font lebih besar */
+    padding: 10px; /* Jarak dalam lebih besar */
+    margin-bottom: 10px;
+    border: 1px solid #ccc; /* Garis batas abu-abu muda */
+    width: 100%; /* Lebar penuh */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Bayangan halus */
+    border-radius: 4px; /* Sudut membulat */
+}
+
+/* Mengubah warna checkbox saat tercentang */
+input[type="checkbox"]:checked {
+    appearance: none; /* Hilangkan default checkbox */
+    background-color: #3498db; /* Warna biru */
+    border: 2px solid #2980b9; /* Border biru */
+    width: 20px; /* Sesuaikan ukuran checkbox */
+    height: 20px; /* Sesuaikan ukuran checkbox */
+    border-radius: 4px; /* Tambahkan radius untuk sudut membulat */
+    position: relative;
+}
+
+/* Mengatur gaya centang pada checkbox tercentang */
+input[type="checkbox"]:checked::before {
+    width: 20px; /* Sesuaikan ukuran checkbox */
+    height: 20px; /* Sesuaikan ukuran checkbox */
+    content: "\2713"; /* Karakter centang */
+    font-size: 16px; /* Ukuran font centang */
+    color: white; /* Warna centang putih */
+    position: absolute; /* Posisi absolut untuk centang */
+    top: 50%; /* Posisi vertikal tengah */
+    left: 50%; /* Posisi horizontal tengah */
+    transform: translate(-50%, -50%); /* Pusatkan centang */
+}
+
+/* Mengatur gaya kontainer layanan */
+.layanan-container {
+    margin-bottom: 20px; /* Jarak bawah */
+}
+
+/* Mengatur gaya tombol kirim, tombol hitung, dan tombol reset */
+input[type="submit"],
+#btn-hitung,
+#btn-reset {
+    width: 100%; /* Lebar tombol 100% dari kontainer */
+    padding: 10px; /* Jarak dalam tombol */
+    border: none; /* Menghapus garis batas */
+    border-radius: 4px; /* Sudut membulat */
+    cursor: pointer; /* Tangan saat hover */
+    transition: background-color 0.3s, color 0.3s; /* Transisi halus */
+    margin-bottom: 10px; /* Jarak bawah antar tombol */
+}
+
+/* Mengatur gaya tombol kirim dengan warna hijau dan hover hijau muda */
+input[type="submit"] {
+    background-color: #2ada53; /* Warna latar belakang hijau */
+    color: #ffffff; /* Warna teks putih */
+}
+
+input[type="submit"]:hover {
+    background-color: #3ab609; /* Warna latar belakang hijau muda saat hover */
+}
+
+/* Mengatur gaya tombol hitung dengan warna biru dan hover biru muda */
+#btn-hitung {
+    background-color: #1c8eda; /* Warna latar belakang biru */
+    color: #ffffff; /* Warna teks putih */
+}
+
+#btn-hitung:hover {
+    background-color: #3d92dd; /* Warna latar belakang biru muda saat hover */
+}
+
+/* Mengatur gaya tombol reset (tidak berubah) */
+#btn-reset {
+    background-color: #e74c3c; /* Warna latar belakang merah */
+    color: #ffffff; /* Warna teks putih */
+}
+
+#btn-reset:hover {
+    background-color: #c0392b; /* Warna latar belakang saat hover */
+}
+
+
+/* Mengatur padding untuk kontainer formulir dan daftar */
+.form-container, 
+.list-container { 
+    padding: 20px; /* Jarak dalam kontainer */
+    width: 100%;
+    
+} 
+
+/* Mengatur gaya judul dalam kontainer formulir dan daftar */
+.form-container h2, 
+.list-container h2 { 
+    margin-bottom: 15px; /* Jarak bawah */
+    color: #333; /* Warna teks */
+} 
+
+/* Mengatur gaya tabel */
+table { 
+    border-collapse: collapse; /* Menggabungkan batas tabel */
+    width: 100%; /* Lebar tabel 100% dari kontainer */
+    margin-bottom: 20px; /* Jarak bawah */
+} 
+
+/* Mengatur gaya header tabel dan sel tabel */
+th, 
+td { 
+    border: 2px solid #ddd; /* Garis batas abu-abu muda */
+    padding: 10px; /* Jarak dalam sel */
+    text-align: center; /* Menyelaraskan teks ke kiri */
+    font-size: 15px
+}
+
+/* Mengatur gaya header tabel */
+th {
+    background-color: #3498db; /* Warna latar belakang biru */
+    color: #ffffff; /* Warna teks putih */
+}
+
+/* Hover effect untuk baris tabel */
+tr:hover {
+    background-color: #f1f1f1; /* Warna latar belakang saat di-hover */
+}
+
+/* Mengatur gaya kontainer tabel */
+.table-container { 
+    width: 100%; /* Lebar kontainer */
+    overflow-x: auto; /* Mengatur overflow horizontal */
+} 
+
+/* Mengatur gaya link dalam tombol aksi */
+.btn-link a:first-child { 
+    background-color: #3498db; /* Warna latar belakang link pertama */
+    color: #ffffff; /* Warna teks putih */
+    padding: 8px 12px; /* Jarak dalam link yang lebih kecil dan lebar */
+    font-size: 14px; /* Ukuran font yang sedikit lebih kecil */
+    text-decoration: none; /* Menghapus garis bawah */
+    border-radius: 4px; /* Sudut membulat */
+    display: block; /* Menampilkan link sebagai blok */
+    text-align: center; /* Menyelaraskan teks di tengah */
+    transition: background-color 0.3s; /* Transisi halus */
+    cursor: pointer; /* Menambahkan kursor pointer pada button */
+}
+
+/* Mengatur gaya link dalam tombol aksi */
+.btn-link a, .btn-link .btn-hapus { 
+    background-color: #e74c3c; /* Warna latar belakang untuk tombol */
+    color: #ffffff; /* Warna teks putih */
+    padding: 8px 12px; /* Jarak dalam link */
+    text-decoration: none; /* Menghapus garis bawah */
+    border-radius: 4px; /* Sudut membulat */
+    font-size: 14px; /* Ukuran font yang sedikit lebih kecil */
+    display: block; /* Menampilkan link sebagai blok */
+    text-align: center; /* Menyelaraskan teks di tengah */
+    transition: background-color 0.3s; /* Transisi halus */
+    cursor: pointer; /* Menambahkan kursor pointer pada button */
+}
+
+/* Warna latar belakang saat hover untuk link dan button */
+.btn-link a:hover, .btn-link .btn-hapus:hover { 
+    background-color: #2980b9; /* Warna latar belakang saat hover untuk link */
+}
+
+.btn-link .btn-hapus { 
+    background-color: #e74c3c; /* Warna latar belakang untuk button hapus */
+    margin-top: 10px; /* Jarak atas untuk button hapus */
+}
+
+.btn-link .btn-hapus:hover { 
+    background-color: #c0392b; /* Warna latar belakang saat hover untuk button hapus */
+}
+
